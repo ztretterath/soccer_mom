@@ -33,6 +33,11 @@ router.post('/signup', function(req, res){
   )
 });
 
+//// USER HOMEPAGE ////
+router.get('/userhome', function(req, res){
+  res.render('user/userhome.hbs');
+});
+
 //// SIGN IN ////
 router.get('/signin', function(req, res){
   res.render('user/signin.hbs/')
@@ -45,7 +50,7 @@ router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), fu
     }
     User.findOne({username: req.session.passport.user}).exec()
     .then(function(user){
-      res.redirect(`/`);
+      res.redirect('/userhome');
     })
     .catch(function(err){
       console.log('error: ', err);
