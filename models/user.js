@@ -8,4 +8,6 @@ var userSchema = new Schema({
   updatedAt: Date
 });
 
+userSchema.plugin(require('passport-local-mongoose'));
+
 module.exports = mongoose.model('User', userSchema);
