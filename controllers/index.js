@@ -10,8 +10,8 @@ router.get('/', function(req, res){
 })
 
 //// SIGN IN ////
-router.get('/signin', function(){
-  res.render('signin.hbs/')
+router.get('/signin', function(req, res){
+  res.render('user/signin.hbs/')
 });
 
 router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), function(req, res){
