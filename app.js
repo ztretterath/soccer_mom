@@ -10,3 +10,5 @@ var passport       = require('passport');
 var localStrategy  = require('passport-local');
 
 mongoose.connect('mongodb://localhost/SoccerMom');
+
+//// MIDDLEWARE /////
