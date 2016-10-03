@@ -31,3 +31,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//// SET CONTROLLER ROUTE /////
+app.use('/', require('./controllers/index.js'));
+
+//// LISTEN HERE ////
+app.listen(3000);
