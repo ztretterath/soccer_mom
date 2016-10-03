@@ -20,3 +20,8 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'hbs');
 
 //// SESSIONS/PASSPORT ////
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+}));
