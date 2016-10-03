@@ -16,4 +16,5 @@ mongoose.connect('mongodb://localhost/SoccerMom');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-aoo.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
+app.set('view engine', 'hbs');
