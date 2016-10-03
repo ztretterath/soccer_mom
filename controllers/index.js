@@ -36,6 +36,10 @@ router.post('/signup', function(req, res){
 //// USER HOMEPAGE ////
 router.get('/userhome', function(req, res){
   res.render('user/userhome.hbs');
+  // User.findOne({username: req.params.username})
+  // .then(function(user){
+  //   res.render('user/userhome.hbs', user);
+  // });
 });
 
 //// SIGN IN ////
