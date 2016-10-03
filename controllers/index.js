@@ -10,6 +10,10 @@ router.get('/', function(req, res){
 })
 
 //// SIGN IN ////
+router.get('/signin', function(){
+  res.render('signin.hbs/')
+});
+
 router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), function(req, res){
   req.session.save(function(err){
     if (err) {
