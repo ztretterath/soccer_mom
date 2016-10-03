@@ -62,4 +62,9 @@ router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), fu
   })
 });
 
+//// MOTHER LIST ////
+router.get(function(req, res){
+  res.render('/user/motherlist.hbs')
+});
+
 module.exports = router;
