@@ -6,7 +6,7 @@ var User     = require('../models/user.js');
 
 //// HOMEPAGE ROUTE ////
 router.get('/', function(req, res){
-  res.send('Home Page');
+  res.render('layout.hbs/');
 })
 
 module.exports = router;
