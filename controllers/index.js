@@ -19,8 +19,17 @@ router.post('/signup', function(req, res){
     new User({
       username: req.body.username,
       password: req.body.password,
-      favSnackType: req.body.password
-    })
+      favSnackType: req.body.password,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }),
+    req.body.password,
+    function(err, user) {
+      if (err) {
+        return res.status(400).send('No such luke w/ registering');
+      }
+      res.redirect('/')
+    }
   )
 });
 
