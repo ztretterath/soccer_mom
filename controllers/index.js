@@ -45,7 +45,7 @@ router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), fu
     }
     User.findOne({username: req.session.passport.user}).exec()
     .then(function(user){
-      res.redirect(`/home`);
+      res.redirect(`/`);
     })
     .catch(function(err){
       console.log('error: ', err);
