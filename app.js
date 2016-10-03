@@ -9,6 +9,8 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var passport       = require('passport');
 var localStrategy  = require('passport-local');
+var User           = require('./models/user.js');
+
 
 mongoose.connect('mongodb://localhost/SoccerMom');
 
@@ -25,4 +27,5 @@ app.use(require('express-session')({
   resave: false,
   saveUninitialized: false
 }));
-var User = require('./models/user.js');
+app.use(passport.initialize());
+app.use(passport.session());
