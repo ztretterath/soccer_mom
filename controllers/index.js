@@ -9,6 +9,8 @@ router.get('/', function(req, res){
   res.render('home.hbs/');
 })
 
+//// SIGN UP ////
+
 //// SIGN IN ////
 router.get('/signin', function(req, res){
   res.render('user/signin.hbs/')
