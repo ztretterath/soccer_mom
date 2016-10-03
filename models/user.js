@@ -7,3 +7,5 @@ var userSchema = new Schema({
   createdAt: Date,
   updatedAt: Date
 });
+
+module.exports = mongoose.model('User', userSchema);
