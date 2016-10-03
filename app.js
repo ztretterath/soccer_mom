@@ -25,4 +25,4 @@ app.use(require('express-session')({
   resave: false,
   saveUninitialized: false
 }));
-var User = require()
+var User = require('./models/user.js');
