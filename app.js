@@ -1,5 +1,6 @@
 pry                = require('pryjs');
 var express        = require('express');
+var app            = express();
 var mongoose       = require('mongoose');
 mongoose.Promise   = global.Promise;
 var logger         = require('morgan');
