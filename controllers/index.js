@@ -15,7 +15,13 @@ router.get('/signup', function(req, res){
 });
 
 router.post('/signup', function(req, res){
-
+  User.register(
+    new User({
+      username: req.body.username,
+      password: req.body.password,
+      favSnackType: req.body.password
+    })
+  )
 });
 
 //// SIGN IN ////

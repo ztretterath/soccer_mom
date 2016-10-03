@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
   username:  String,
   password:  String,
+  favSnackType: String,
   createdAt: Date,
   updatedAt: Date
 });
