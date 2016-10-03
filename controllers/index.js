@@ -11,7 +11,7 @@ router.get('/', function(req, res){
 
 //// SIGN UP ////
 router.get('/signup', function(req, res){
-  res.render('user/signup.hbs/')
+  res.render('user/signin.hbs/')
 });
 
 router.post('/signup', function(req, res){
