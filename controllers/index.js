@@ -38,18 +38,19 @@ router.post('/signup', function(req, res){
 
 //// USER HOMEPAGE ////
 router.get('/userhome', function(req, res){
-  if (req.user._id != req.params.id){
-    console.log('not authorized');
-    res.redirect('/');
-  } else {
-    User.find({})
-    .then(function(user) {
-      res.render('user/userhome.hbs', {user:req.user});
-    })
-    .catch(function(err){
-      res.json({message: 'not today ' + err});
-    });
-  }
+  // if (!req.user || req.user._id != req.params.id){
+  //   console.log('not authorized');
+  //   res.redirect('/');
+  // } else {
+  //   User.find({})
+  //   .then(function(user) {
+  //     res.render('user/userhome.hbs', {user:req.user});
+  //   })
+  //   .catch(function(err){
+  //     res.json({message: 'not today ' + err});
+  //   });
+  // }
+  res.render('user/userhome.hbs', {user:req.user});
 });
 
 //// SIGN IN ////
