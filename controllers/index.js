@@ -83,7 +83,14 @@ router.post('/signin', passport.authenticate('local', {failureRedirect: '/'}), f
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
   User.find({}, function(err, users){
-    res.render('user/motherlist.hbs/', { users:users, user:req.user });
+    res.render('user/motherlist.hbs/', { users:users });
+  });
+});
+
+//// MOTHER SNACK PAGE ////
+router.get('/:id', function(req, res){
+  User.findById(req.params.id, function(err, user){
+    res.render('user/snack-view.hbs', {user:req.user});
   });
 });
 
