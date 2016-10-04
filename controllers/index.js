@@ -80,6 +80,12 @@ router.post('/signin', passport.authenticate('local', {failureRedirect: '/'}), f
   })
 });
 
+//// LOGOUT ////
+router.delete('/signout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
   User.find({}, function(err, users){
@@ -87,18 +93,14 @@ router.get('/motherlist', function(req, res){
   });
 });
 
-//// LOGOUT ////
-router.delete('/signout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
-
 //// MOTHER SNACK PAGE ////
-router.get('/:userId', function(req, res){
-  User.findById(req.params.userId, function(err, user){
+router.get('/username', function(req, res){
+  User.findById(req.params.username, function(err, user){
     console.log(user);
-    res.render('user/snack-view.hbs', {user: user});
+    res.render('user/snack-view.hbs', {user:user});
   });
 });
+
+//// NEW SNACK ////
 
 module.exports = router;
