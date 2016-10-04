@@ -2,6 +2,7 @@ var pry      = require('pryjs');
 var express  = require('express');
 var router   = express.Router();
 var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
 var User     = require('../models/user.js');
 
 //// HOMEPAGE ROUTE ////
@@ -25,9 +26,10 @@ router.post('/signup', function(req, res){
     }),
     req.body.password,
     function(err, user) {
-      if (err) {
-        return res.status(400).send('No such luke w/ registering');
-      }
+      if (err) return res.json({user:user}); 
+      // {
+      //   return res.status(400).send('No such luke w/ registering');
+      // }
       res.redirect('/')
     }
   )
