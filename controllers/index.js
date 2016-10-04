@@ -4,6 +4,7 @@ var router        = express.Router();
 var passport      = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var User          = require('../models/user.js');
+var Snack         = require('../models/snack.js')
 
 var authenticate = function(req, res, next) {
   if (!req.user || req.user._id != req.params.id) {
@@ -94,10 +95,12 @@ router.get('/motherlist', function(req, res){
 });
 
 //// MOTHER SNACK PAGE ////
-router.get('/username', function(req, res){
-  User.findById(req.params.username, function(err, user){
-    console.log(user);
-    res.render('user/snack-view.hbs', {user:user});
+router.post('/newSnack', function(req, res){
+  var snack = new Snack({
+    name: req.body.name
+  });
+  snack.save(function(err, snack){
+    res.redirect('/userhome');
   });
 });
 
