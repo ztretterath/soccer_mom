@@ -2,7 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var snackSchema = new Schema({
-  name:  String
+  name:  String,
+  createdAt: Date,
+  updatedAt: Date
 });
 
 snackSchema.plugin(require('passport-local-mongoose'));

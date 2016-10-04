@@ -6,9 +6,7 @@ var userSchema = new Schema({
   username:  String,
   password:  String,
   favSnackType: String,
-  snacks: [snackSchema],
-  createdAt: Date,
-  updatedAt: Date
+  snacks: [snackSchema]
 });
 
 userSchema.plugin(require('passport-local-mongoose'));

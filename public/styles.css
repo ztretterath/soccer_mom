@@ -1,4 +1,3 @@
-footer {
-  bottom: 0;
-  position: absolute;
+body {
+  background: blue;
 }
