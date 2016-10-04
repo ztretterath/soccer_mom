@@ -77,4 +77,10 @@ router.get('/motherlist', function(req, res){
   });
 });
 
+//// LOGOUT ////
+router.delete('/logout', function(){
+  req.logout();
+  res.redirect('/');
+})
+
 module.exports = router;
