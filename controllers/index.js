@@ -1,9 +1,9 @@
-var pry      = require('pryjs');
-var express  = require('express');
-var router   = express.Router();
-var passport = require('passport');
+var pry           = require('pryjs');
+var express       = require('express');
+var router        = express.Router();
+var passport      = require('passport');
 var localStrategy = require('passport-local').Strategy;
-var User     = require('../models/user.js');
+var User          = require('../models/user.js');
 
 var authenticate = function(req, res, next) {
   if (!req.user || req.user._id != req.params.id) {
@@ -87,17 +87,18 @@ router.get('/motherlist', function(req, res){
   });
 });
 
-//// MOTHER SNACK PAGE ////
-router.get('/:id', function(req, res){
-  User.findById(req.params.id, function(err, user){
-    res.render('user/snack-view.hbs', {user:req.user});
-  });
-});
-
 //// LOGOUT ////
 router.delete('/signout', function(req, res){
   req.logout();
   res.redirect('/');
-})
+});
+
+//// MOTHER SNACK PAGE ////
+router.get('/:userId', function(req, res){
+  User.findById(req.params.userId, function(err, user){
+    console.log(user);
+    res.render('user/snack-view.hbs', {user: user});
+  });
+});
 
 module.exports = router;

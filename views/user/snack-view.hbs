@@ -1,0 +1,18 @@
+<form action="/motherlist" method="get">
+   <button type="submit" name="button">View the Mother List</button>
+</form>
+
+<h3>Snack from {{user.username}}:</h3>
+
+<a href="/newSnack" id="newSnack">Add Snack</a>
+
+<div class="snackList">
+  {{#each user.snacks}}
+  <div class="snack-show">
+    <p>
+      {{name}}
+    </p>
+  </div>
+  <br>
+  {{/each}}
+</div>

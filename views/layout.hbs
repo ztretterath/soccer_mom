@@ -7,7 +7,6 @@
   <body>
     <ul>
       {{#if user}}
-      <p>Hello, {{user.username}}!</p>
       <form action="/signout?_method=DELETE" method="POST">
         <button type="submit">Sign Out</button>
       </form>
