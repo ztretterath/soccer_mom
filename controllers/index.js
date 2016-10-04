@@ -7,7 +7,11 @@ var User     = require('../models/user.js');
 
 //// HOMEPAGE ROUTE ////
 router.get('/', function(req, res){
-  res.render('home.hbs/');
+  User.find({})
+  .then(function(user){
+    res.render('home.hbs/', {user:req.user});
+  })
+
 })
 
 //// SIGN UP ////
@@ -37,7 +41,11 @@ router.post('/signup', function(req, res){
 
 //// USER HOMEPAGE ////
 router.get('/userhome', function(req, res){
-  res.render('user/userhome.hbs');
+  User.find({})
+  .then(function(user) {
+    res.render('user/userhome.hbs', {user:req.user});
+  })
+
   // User.findOne({username: req.params.username})
   // .then(function(user){
   //   res.render('user/userhome.hbs', user);
@@ -65,7 +73,7 @@ router.post('/signin', passport.authenticate('local', {failureRedirect: '/'}), f
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
   User.find({}, function(err, users){
-    res.render('user/motherlist.hbs/', {users:users});
+    res.render('user/motherlist.hbs/', { users:users, user:req.user });
   });
 });
 
