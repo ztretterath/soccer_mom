@@ -6,6 +6,9 @@
 <br>
 {{#each user.snacks}}
   <p>  {{name}} </p>
+  <form action="/deleteSnack?_method=DELETE" method="post">
+    <button type="submit" name="button">Eaten</button>
+  </form>
 <br>
 {{/each}}
 <br>

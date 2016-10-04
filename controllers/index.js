@@ -93,7 +93,7 @@ router.get('/motherlist', function(req, res){
   });
 });
 
-//// MOTHER SNACK PAGE ////
+//// NEW SNACK ////
 router.post('/newSnack/:id', function(req, res){
   User.findById(req.params.id, function(err, user){
     // console.log(user);
@@ -104,6 +104,6 @@ router.post('/newSnack/:id', function(req, res){
   });
 });
 
-//// NEW SNACK ////
+//// DELETE SNACK ////
 
 module.exports = router;
