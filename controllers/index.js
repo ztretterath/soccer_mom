@@ -31,9 +31,6 @@ router.post('/signup', function(req, res){
     req.body.password,
     function(err, user) {
       if (err) return res.json({user:user});
-      // {
-      //   return res.status(400).send('No such luke w/ registering');
-      // }
       res.redirect('/')
     }
   )
@@ -41,15 +38,14 @@ router.post('/signup', function(req, res){
 
 //// USER HOMEPAGE ////
 router.get('/userhome', function(req, res){
+  if (req.user._id != req.params.id){
+    console.log('not authorized');
+    res.redirect('/');
+  }
   User.find({})
   .then(function(user) {
     res.render('user/userhome.hbs', {user:req.user});
-  })
-
-  // User.findOne({username: req.params.username})
-  // .then(function(user){
-  //   res.render('user/userhome.hbs', user);
-  // });
+  });
 });
 
 //// SIGN IN ////
@@ -78,7 +74,7 @@ router.get('/motherlist', function(req, res){
 });
 
 //// LOGOUT ////
-router.delete('/logout', function(){
+router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 })
