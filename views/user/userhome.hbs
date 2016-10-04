@@ -3,6 +3,13 @@
    <button type="submit" name="button">View the Mother List</button>
 </form>
 <br>
+<br>
+{{#each user.snacks}}
+  <p>  {{name}} </p>
+<br>
+{{/each}}
+<br>
+<br>
 <form action="/newSnack/{{user._id}}" method="post">
   <input type="text" name="name" placeholder="Snack Name">
   <button type="submit">Add Snack</button>
