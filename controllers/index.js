@@ -6,9 +6,9 @@ var localStrategy = require('passport-local').Strategy;
 var User     = require('../models/user.js');
 
 var authenticate = function(req, res, next) {
-  if (!req.user || req.user._id != req.params.id){
+  if (!req.user || req.user._id != req.params.id) {
     console.log('not authorized');
-    res.json({status:401, message: 'unauthorized'})
+    res.json({status: 401, message: 'unauthorized'})
   } else {
     next();
   }
@@ -88,7 +88,7 @@ router.get('/motherlist', function(req, res){
 });
 
 //// LOGOUT ////
-router.get('/logout', function(req, res){
+router.delete('/signout', function(req, res){
   req.logout();
   res.redirect('/');
 })
