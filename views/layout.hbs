@@ -8,7 +8,7 @@
     <ul>
       {{#if user}}
       <p>Hello, {{user.username}}!</p>
-      <form action="/signout?_method=DELETE">
+      <form action="/signout?_method=DELETE" method="POST">
         <button type="submit">Sign Out</button>
       </form>
       <li style='display: inline;'><a href="/userhome">Home</a></li>
