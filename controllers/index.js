@@ -64,7 +64,9 @@ router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), fu
 
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
-  res.render('user/motherlist.hbs/')
+  User.findOne({}, function(err, users){
+    res.render('user/motherlist.hbs/', {users:users});
+  });
 });
 
 module.exports = router;
