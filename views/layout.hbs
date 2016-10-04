@@ -5,6 +5,14 @@
     <title>Soccer Mom</title>
   </head>
   <body>
+    <ul>
+      {{#if user}}
+      <p>Hello, {{user.username}}!</p>
+      <li style='display: inline;'><a href="/signout">Sign Out</a></li>
+      {{else}}
+      <li style='display: inline;'><a href="/signin">Sign In / Up</a></li>
+      {{/if}}
+    </ul>
     <h1>Soccer Mom Companion</h1>
     <h2>For all of your Saturday snack needs</h2>
 
