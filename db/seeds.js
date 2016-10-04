@@ -9,3 +9,7 @@ var Snack  = Schema.Snack;
 User.remove({}, function(err){
   console.log(err);
 });
+
+Snack.remove({}, function(err){
+  console.log(err);
+})
