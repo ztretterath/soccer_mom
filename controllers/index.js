@@ -6,14 +6,14 @@ var localStrategy = require('passport-local').Strategy;
 var User          = require('../models/user.js');
 var Snack         = require('../models/snack.js')
 
-var authenticate = function(req, res, next) {
-  if (!req.user || req.user._id != req.params.id) {
-    console.log('not authorized');
-    res.json({status: 401, message: 'unauthorized'})
-  } else {
-    next();
-  }
-}
+// var authenticate = function(req, res, next) {
+//   if (!req.user || req.user._id != req.params.id) {
+//     console.log('not authorized');
+//     res.json({status: 401, message: 'unauthorized'})
+//   } else {
+//     next();
+//   }
+// }
 
 //// HOMEPAGE ROUTE ////
 router.get('/', function(req, res){
