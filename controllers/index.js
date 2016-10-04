@@ -26,7 +26,7 @@ router.post('/signup', function(req, res){
     }),
     req.body.password,
     function(err, user) {
-      if (err) return res.json({user:user}); 
+      if (err) return res.json({user:user});
       // {
       //   return res.status(400).send('No such luke w/ registering');
       // }
@@ -49,11 +49,9 @@ router.get('/signin', function(req, res){
   res.render('user/signin.hbs/')
 });
 
-router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), function(req, res){
+router.post('/signin', passport.authenticate('local', {failureRedirect: '/'}), function(req, res){
   req.session.save(function(err){
-    if (err) {
-      return next(err);
-    }
+    if (err) return next(err);
     User.findOne({username: req.session.passport.user}).exec()
     .then(function(user){
       res.redirect('/userhome');
@@ -66,7 +64,7 @@ router.post('/signin',passport.authenticate('local', {failureRedirect: '/'}), fu
 
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
-  User.findOne({}, function(err, users){
+  User.find({}, function(err, users){
     res.render('user/motherlist.hbs/', {users:users});
   });
 });
