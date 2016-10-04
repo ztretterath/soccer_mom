@@ -20,9 +20,8 @@ router.get('/', function(req, res){
   User.find({})
   .then(function(user){
     res.render('home.hbs/', {user:req.user});
-  })
-
-})
+  });
+});
 
 //// SIGN UP ////
 router.get('/signup', function(req, res){
@@ -95,12 +94,13 @@ router.get('/motherlist', function(req, res){
 });
 
 //// MOTHER SNACK PAGE ////
-router.post('/newSnack', function(req, res){
-  var snack = new Snack({
-    name: req.body.name
-  });
-  snack.save(function(err, snack){
-    res.redirect('/userhome');
+router.post('/newSnack/:id', function(req, res){
+  User.findById(req.params.id, function(err, user){
+    // console.log(user);
+    user.snacks.push(new Snack({name: req.body.name}))
+    user.save(function(err, snack){
+      res.redirect('/userhome');
+    });
   });
 });
 

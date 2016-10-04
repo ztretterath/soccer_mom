@@ -3,8 +3,8 @@
    <button type="submit" name="button">View the Mother List</button>
 </form>
 <br>
-<form action="/newSnack" method="post">
-  <input type="text" name="name" placholder="Snack Name">
+<form action="/newSnack/{{user._id}}" method="post">
+  <input type="text" name="name" placeholder="Snack Name">
   <button type="submit">Add Snack</button>
 </form>
 <br>
