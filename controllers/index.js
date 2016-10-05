@@ -5,7 +5,7 @@ var passport      = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var User          = require('../models/user.js');
 var Snack         = require('../models/snack.js')
-var methodOverride = require('method-override');
+// var methodOverride = require('method-override');
 
 
 // var authenticate = function(req, res, next) {
@@ -119,7 +119,7 @@ router.delete('/deleteSnack/:id', function(req, res){
    }, function(err) {
      res.redirect('/userhome');
    }
- })
+ });
 });
 
 module.exports = router;
