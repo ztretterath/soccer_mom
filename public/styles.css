@@ -32,3 +32,15 @@
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+.mom-container {
+  border: 1px black solid;
+}
+.user-fav-snack {
+  background-color: black;
+  color: white;
+  display: inline-block;
+}
+.snacks {
+  background-color: blue;
+  color: white;
+}

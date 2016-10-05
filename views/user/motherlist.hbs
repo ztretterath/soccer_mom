@@ -3,15 +3,21 @@
 </form> -->
 <h3>The Mother List</h3>
 {{#each users}}
-  <div class ='mom'>
     <!-- <h4><a href='/username'>{{ username }}</a></h4> -->
-    <h4>{{ username }}</h4>
-    <p>
-      {{username}}'s children enjoy {{favSnackType}}
-    </p>
-      {{#each snacks}}
-        <p>  {{name}}  </p>
-      {{/each}}
-  </div>
-  <hr>
+    <div class="mom-container">
+      <div class="user-fav-snack">
+        <h4>{{ username }}</h4>
+        <p>
+          {{username}}'s children enjoy {{favSnackType}}
+        </p>
+      </div>
+      <div class="snacks">
+        <p>
+          {{ username }}'s snacks from the past:
+        </p>
+        {{#each snacks}}
+          <p>  {{name}}  </p>
+        {{/each}}
+      </div>
+    </div>
 {{/each}}
