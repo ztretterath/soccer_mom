@@ -14,13 +14,13 @@
       <li style='display: inline;'><a href="/userhome">Home</a></li>
       {{else}}
       <form action="/signin" method="get">
-        <button type="submit" name="signin">Sign In / Up</button>
+        <button type="submit" class="hvr-pulse">Sign In / Up</button>
       </form>
       <!-- <li style='display: inline;'><a href="/signin">Sign In / Up</a></li> -->
-      <form class="" action="index.html" method="post">
-
+      <form class="" action="/userhome" method="get">
+        <button type="submit" class="hvr-pulse">Home</button>
       </form>
-      <li style='display: inline;'><a href="/userhome">Home</a></li>
+      <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
       {{/if}}
     </ul>
     <h1>Soccer Mom Companion</h1>
