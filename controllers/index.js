@@ -108,7 +108,8 @@ router.post('/newSnack/:id', function(req, res){
 router.delete('/deleteSnack', function(req, res){
  User.findByIdAndUpdate(req.params.id, {
    $pull: {
-     snacks: [{_id: req.params.id}]
+    //  snacks: [{_id: req.params.id}]
+     snacks: {_id: req.params.id}
    }, function(err) {
      res.redirect('/userhome');
    }
