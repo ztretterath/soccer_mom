@@ -103,3 +103,18 @@ ul:nth-child(even) li a{
   position:relative;
   top:5px;
 }
+
+/*Use the transform method scale to zoom
+in on inidividual sticky note and increase
+intensity of box-shadow
+Idea from Chris Heilmann*/
+ul li a:hover,ul li a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
