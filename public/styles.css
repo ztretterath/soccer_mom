@@ -45,7 +45,7 @@
   color: white;*/
 /*} */
 
-*{
+* {
   margin:0;
   padding:0;
 }
@@ -84,6 +84,8 @@ ul li a{
 }
 ul li{
   margin:1em;
+  position: relative;
+  /*display:inline;*/
   float:left;
 }
 ul li h2{
@@ -94,4 +96,16 @@ ul li h2{
 ul li p{
   font-family:"Reenie Beanie",arial,sans-serif;
   font-size:180%;
+}
+ul li a{
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+ul:nth-child(even) li a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
 }
