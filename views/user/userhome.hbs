@@ -6,7 +6,7 @@
 <br>
 {{#each user.snacks}}
   <p>  {{name}} </p>
-  <form action="/:id/deleteSnack?_method=DELETE" method="post">
+  <form action="/{{_id}}/deleteSnack?_method=DELETE" method="post">
     <button type="submit" name="button">Eaten</button>
   </form>
 <br>
