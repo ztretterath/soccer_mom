@@ -109,11 +109,11 @@ router.post('/newSnack/:id', function(req, res){
 });
 
 //// DELETE SNACK ////
-router.delete('/:id/deleteSnack', function(req, res){
- User.findByIdAndUpdate(req.params.id, {
+router.delete('/:userId/deleteSnack/:snackId', function(req, res){
+ User.findByIdAndUpdate(req.params.userid, {
    $pull: {
     //  snacks: [{_id: req.params.id}]
-     snacks: {_id: req.params.id}
+     snacks: {_id: req.params.snackId}
    }, function(err) {
      res.redirect('/userhome');
    }

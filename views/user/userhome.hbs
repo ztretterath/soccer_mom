@@ -6,7 +6,7 @@
 <h3>Your Snacks:</h3>
 {{#each user.snacks}}
   <p>  {{name}} </p>
-  <form action="/{{_id}}/deleteSnack?_method=DELETE" method="post">
+  <form action="/{{user._id}}/deleteSnack/{{snacks._id}}?_method=DELETE" method="post">
     <button type="submit" name="button" class="hvr-pulse">Eaten</button>
   </form>
 <br>
