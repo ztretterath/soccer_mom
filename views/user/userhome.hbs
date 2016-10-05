@@ -1,12 +1,12 @@
 <form action="/motherlist" method="get">
-   <button type="submit" name="button">View the Mother List</button>
+   <button type="submit" name="button" class="hvr-pulse">View the Mother List</button>
 </form>
 <h3>Welcome back, {{user.username}}</h3>
 <h3>Your Snacks:</h3>
 {{#each user.snacks}}
   <p>  {{name}} </p>
   <form action="/{{_id}}/deleteSnack?_method=DELETE" method="post">
-    <button type="submit" name="button">Eaten</button>
+    <button type="submit" name="button" class="hvr-pulse">Eaten</button>
   </form>
 <br>
 {{/each}}
@@ -14,6 +14,6 @@
 <br>
 <form action="/newSnack/{{user._id}}" method="post">
   <input type="text" name="name" placeholder="Snack Name">
-  <button type="submit">Add Snack</button>
+  <button type="submit" class="hvr-pulse">Add Snack</button>
 </form>
 <br>
