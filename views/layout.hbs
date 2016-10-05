@@ -11,15 +11,16 @@
       <form action="/signout?_method=DELETE" method="POST">
         <button type="submit" class="hvr-pulse">Sign Out</button>
       </form>
-      <li style='display: inline;'><a href="/userhome">Home</a></li>
+      <form class="" action="/userhome" method="get">
+        <button type="submit" class="hvr-pulse">Home</button>
+      </form>
+      <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
       {{else}}
       <form action="/signin" method="get">
         <button type="submit" class="hvr-pulse">Sign In / Up</button>
       </form>
       <!-- <li style='display: inline;'><a href="/signin">Sign In / Up</a></li> -->
-      <form class="" action="/userhome" method="get">
-        <button type="submit" class="hvr-pulse">Home</button>
-      </form>
+
       <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
       {{/if}}
     </ul>
