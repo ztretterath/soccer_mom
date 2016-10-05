@@ -5,6 +5,8 @@ var passport      = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var User          = require('../models/user.js');
 var Snack         = require('../models/snack.js')
+var methodOverride = require('method-override');
+
 
 // var authenticate = function(req, res, next) {
 //   if (!req.user || req.user._id != req.params.id) {
@@ -109,11 +111,11 @@ router.post('/newSnack/:id', function(req, res){
 });
 
 //// DELETE SNACK ////
-router.delete('/:userId/deleteSnack/:snackId', function(req, res){
- User.findByIdAndUpdate(req.params.userid, {
+router.delete('/deleteSnack/:id', function(req, res){
+ User.findByIdAndUpdate(req.params.id, {
    $pull: {
     //  snacks: [{_id: req.params.id}]
-     snacks: {_id: req.params.snackId}
+     snacks: {_id: req.params.id}
    }, function(err) {
      res.redirect('/userhome');
    }
