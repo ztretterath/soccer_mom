@@ -2,9 +2,9 @@
   <button type="submit" class="hvr-pulse">Home</button>
 </form> -->
 <h3>The Mother List</h3>
-{{#each users}}
-    <!-- <h4><a href='/username'>{{ username }}</a></h4> -->
-    <div class="mom-container">
+<!-- {{#each users}}
+    <h4><a href='/username'>{{ username }}</a></h4> -->
+    <!-- <div class="mom-container">
       <div class="user-fav-snack">
         <h4>{{ username }}</h4>
         <p>
@@ -20,4 +20,19 @@
         {{/each}}
       </div>
     </div>
+{{/each}} -->
+
+<!-- STICKY NOTES -->
+{{#each users}}
+<ul>
+  <li>
+    <a href="#">
+      <h2>{{username}}</h2>
+      {{#each snacks}}
+      <p>{{name}}</p>
+      {{/each}}
+    </a>
+  </li>
+  <li>
+</ul>
 {{/each}}
