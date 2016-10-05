@@ -8,24 +8,21 @@ family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     <title>Soccer Mom</title>
   </head>
   <body>
-    <ul>
-
-        {{#if user}}
-        <form action="/signout?_method=DELETE" method="POST">
-          <button type="submit" class="hvr-pulse">Sign Out</button>
-        </form>
-        <form class="" action="/userhome" method="get">
-          <button type="submit" class="hvr-pulse" class="home-btn">Home</button>
-        </form>
+    {{#if user}}
+      <form action="/signout?_method=DELETE" method="POST">
+        <button type="submit" class="hvr-pulse">Sign Out</button>
+      </form>
+      <form class="" action="/userhome" method="get">
+        <button type="submit" class="hvr-pulse" class="home-btn">Home</button>
+      </form>
         <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
-        {{else}}
-        <form action="/signin" method="get">
-          <button type="submit" class="hvr-pulse">Sign In / Up</button>
-        </form>
+    {{else}}
+      <form action="/signin" method="get">
+        <button type="submit" class="hvr-pulse">Sign In / Up</button>
+      </form>
         <!-- <li style='display: inline;'><a href="/signin">Sign In / Up</a></li> -->
         <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
-        {{/if}}
-      </ul>
+    {{/if}}
     <div class="title">
       <h1>Soccer Mom Companion</h1>
       <h2>For all of your Saturday snack needs</h2>
