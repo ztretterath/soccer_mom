@@ -1,9 +1,8 @@
-<h3>Welcome back, {{user.username}}!</h3>
 <form action="/motherlist" method="get">
    <button type="submit" name="button">View the Mother List</button>
 </form>
-<br>
-<br>
+<h3>Welcome back, {{user.username}}</h3>
+<h3>Your Snacks:</h3>
 {{#each user.snacks}}
   <p>  {{name}} </p>
   <form action="/{{_id}}/deleteSnack?_method=DELETE" method="post">
