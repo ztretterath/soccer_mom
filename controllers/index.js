@@ -89,10 +89,11 @@ router.delete('/signout', function(req, res){
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
   // var user = User.findById({id: req.params.id});
-  User.find({}, function(err, user, users){
-    console.log(user);
-    console.log(users);
-    res.render('user/motherlist.hbs/', { user:user, users:users });
+  User.find({}, function(err, users){
+    var user = User.findById({id: req.params.id});
+    console.log('user:' + user);
+    // console.log(users);
+    res.render('user/motherlist.hbs/', { users:users, user:user });
   });
 });
 
