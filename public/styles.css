@@ -1,6 +1,14 @@
 /*body {
   background: blue;
 }*/
+.home-btn {
+  position:relative;
+  top: 0;
+  right:15px;
+}
+.title {
+  border: 1px black solid;
+}
 @keyframes hvr-pulse {
   25% {
     -webkit-transform: scale(1.1);
@@ -79,6 +87,7 @@ ul li p{
   font-size:180%;
 }
 ul li a{
+  float: left;
   text-decoration:none;
   color:#000;
   background:#ffc;
@@ -105,6 +114,15 @@ ul:nth-child(even) li a{
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
+  background: #ccf;
+}
+ul:nth-child(3n) li a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background: #cfc;
 }
 
 /*Use the transform method scale to zoom
