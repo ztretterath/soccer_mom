@@ -110,16 +110,26 @@ router.post('/newSnack/:id', function(req, res){
   });
 });
 
-//// DELETE SNACK ////
+// DELETE SNACK ////
+// router.delete('/deleteSnack/:id', function(req, res){
+//  User.findByIdAndUpdate(req.params.id,
+//    {$pull: {snacks: {$in: {_id: req.params.id}}}},
+//    function(err) {
+//     res.redirect('/userhome');
+//    }
+//  }));
+//  snacks: {_id: req.params.id}
+// console.log(req.params.id);
 router.delete('/deleteSnack/:id', function(req, res){
- User.findByIdAndUpdate(req.params.id, {
-   $pull: {
-    //  snacks: [{_id: req.params.id}]
-     snacks: {_id: req.params.id}
-   }, function(err) {
-     res.redirect('/userhome');
-   }
- });
-});
+  User.findOne(req.params.id)
+  .then(function(user) {
+    $pull: {snacks: {$in: req.params.id}}
+  })
+  .then(function(err) {
+    res.redirect('/userhome')
+  })
+}); //end route
+
+
 
 module.exports = router;
