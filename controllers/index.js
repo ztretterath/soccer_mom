@@ -118,8 +118,10 @@ router.post('/newSnack/:id', function(req, res){
 //     res.redirect('/userhome');
 //    }
 //  }));
-//  snacks: {_id: req.params.id}
+
+// snacks: {_id: req.params.id}
 // console.log(req.params.id);
+
 router.delete('/deleteSnack/:id', function(req, res){
   User.findOne(req.params.id)
   .then(function(user) {
