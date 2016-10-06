@@ -4,21 +4,7 @@
 /*#signin #signup {
 
 }*/
-/*CALENDAR*/
-#calendar {
-  width: 100%;
-}
-#calendar a {
-  color: #666;
-  text-decoration: none;
-}
-#calendar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  clear: both;
-  width: 100%;
-}
+
 input {
   padding: 5px 10px;
   font-size: 13px;
@@ -107,20 +93,20 @@ ul li .sticky{
   /*display:inline;*/
   float: left;
 }
-ul .sticky{
+ul.sticky{
   overflow:hidden;
   padding:3em;
 }
-ul li h3{
+ul.sticky li h3{
   font-size:140%;
   font-weight:bold;
   padding-bottom:10px;
 }
-ul li p {
+ul.sticky li p {
   font-family:"Reenie Beanie",arial,sans-serif;
   font-size:180%;
 }
-ul li a {
+ul.sticky li a {
   float: left;
   text-decoration:none;
   color:#000;
@@ -163,7 +149,7 @@ ul:nth-child(3n) li a {
 in on inidividual sticky note and increase
 intensity of box-shadow
 Idea from Chris Heilmann*/
-ul li a:hover,ul li a:focus{
+ul.sticky li a:hover,ul.sticky li a:focus{
   -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
   box-shadow:10px 10px 7px rgba(0,0,0,.7);
@@ -196,6 +182,84 @@ footer {
   position: fixed;
   bottom: 10px;
   opacity: 0.25;
+}
+/*CALENDAR*/
+#calendar {
+  width: 99vw;
+}
+#calendar a {
+  color: #666;
+  text-decoration: none;
+}
+#calendar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  clear: both;
+  width: 99vw;
+}
+#calendar li {
+  display: block;
+  float: left;
+  width: 13vw; <!-- about one seventh -->
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+#calendar ul.weekdays {
+  height: 40px;
+  width: 98vw;
+  background: #333;
+}
+#calendar ul.weekdays li {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: none !important;
+  padding: 10px 6px;
+  color: #fff;
+  font-size: 13px;
+}
+#calendar .days li {
+  height: 120px;
+}
+#calendar .days li:hover {
+  background: #eee;
+}
+#calendar .date {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px;
+  background: #7c795d;
+  color: #fff;
+  width: 25px;
+  border-radius: 50%;
+}
+#calendar .snack{
+  clear: both;
+  display: block;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #666;
+  line-height: 14px;
+  background: #7c795d;
+  border: 1px solid black;
+  color: #fff;
+  text-decoration: none;
+}
+#calendar .snack-description {
+  color: #666;
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+#calendar .other-month {
+  background: #f5f5f5;
+  color: #666;
 }
 /*.title {
 text-align: center;
