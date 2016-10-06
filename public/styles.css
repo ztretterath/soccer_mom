@@ -211,7 +211,7 @@ footer {
 }
 #calendar ul.weekdays {
   height: 40px;
-  width: 98vw;
+  width: 92%;
   background: #333;
 }
 #calendar ul.weekdays li {
@@ -270,13 +270,16 @@ footer {
   #calendar li {
     height: auto !important; /*ignore other rules*/
     border: 1px solid black;
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: -1px;
   }
   #calendar .other-month {
     display: none; /*no prev month needed for small screen*/
   }
+  /*#calendar .date {
+    float: none;
+  }*/
 }
 
 /*3D TITLE*/
