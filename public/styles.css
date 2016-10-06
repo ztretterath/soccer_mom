@@ -4,6 +4,10 @@
 #signin #signup {
   /*color: yellow;*/
 }
+input {
+  padding: 5px 10px;
+  font-size: 13px;
+}
 button {
     background-color: #7c795d;
     border: none;
