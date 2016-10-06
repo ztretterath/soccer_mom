@@ -122,14 +122,16 @@ router.post('/newSnack/:id', function(req, res){
 // snacks: {_id: req.params.id}
 // console.log(req.params.id);
 
-router.delete('/deleteSnack/:id', function(req, res){
+
+router.post('/deleteSnack/:id', function(req, res){
+  // console.log("delete path");
   User.findOne(req.params.id)
   .then(function(user) {
     $pull: {snacks: {$in: req.params.id}}
   })
   .then(function(err) {
     res.redirect('/userhome')
-  })
+  });
 }); //end route
 
 
