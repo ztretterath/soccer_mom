@@ -2,14 +2,14 @@
    <button type="submit" class="hvr-pulse">View the Mother List</button>
 </form>
 <!-- <a href="/motherlist">Mother List</a> -->
-<h3>Welcome back, {{user.username}}</h3>
+<h3 id="user-welcome">Welcome back, {{user.username}}</h3>
 <h3>Your Snacks:</h3>
 
 <ul>
   {{#each user.snacks}}
     <li class="user-snacks">
       {{name}}
-      <form action="/deleteSnack/{{user.snacks._id}}?_method=delete" method="post">
+      <form action="/deleteSnack/{{user.snacks._id}}">
         <button type="submit" name="button" class="hvr-pulse">Eaten</button>
       </form>
     </li>

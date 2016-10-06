@@ -284,6 +284,17 @@ footer {
 
 .user-snacks {
   /*border: 1px black solid;*/
+  height: 80px;
+}
+li.user-snacks {
+  display: block;
+  float: left;
+  width: 20vw;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-right: -1px;
+  padding-top: 10px;
+  text-align: center;
 }
 /*3D TITLE*/
 /*.title {

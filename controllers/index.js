@@ -129,18 +129,22 @@ router.post('/newSnack/:id', function(req, res){
 
 // snacks: {_id: req.params.id}
 // console.log(req.params.id);
-
-
-router.delete('/deleteSnack/:id', function(req, res){
-  // console.log("delete path");
-  User.findOne(req.params)
-  .then(function(user) {
-    $pull: {snacks: {$in: req.params.id}}
+//
+// router.delete('/deleteSnack/:id', function(req, res){
+//   // console.log("delete path");
+//   User.findOne(req.params)
+//   .then(function(user) {
+//     $pull: {snacks: {$in: req.params.id}}
+//   })
+//   .then(function(err) {
+//     res.redirect('/userhome')
+//   });
+// }); //end route
+router.get('/deleteSnack/:id', function(){
+  Snack.findByIdAndRemove(req.params.id, function(err, snack){
+    res.redirect('/userhome');
   })
-  .then(function(err) {
-    res.redirect('/userhome')
-  });
-}); //end route
+})
 
 
 
