@@ -26,8 +26,8 @@ router.get('/', function(req, res){
 });
 
 //// CALENDAR ////
-router.get('/calendar', function(req, res){
-  res.render('user/calendar.hbs/')
+router.get('/calendar', function(req, res, user){
+  res.render('user/calendar.hbs/', {user:req.user})
 });
 
 //// SIGN UP ////
