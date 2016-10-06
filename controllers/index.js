@@ -25,6 +25,11 @@ router.get('/', function(req, res){
   });
 });
 
+//// CALENDAR ////
+router.get('/calendar', function(req, res){
+  res.render('user/calendar.hbs/')
+});
+
 //// SIGN UP ////
 router.get('/signup', function(req, res){
   res.render('user/signin.hbs/')

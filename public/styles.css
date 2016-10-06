@@ -4,6 +4,21 @@
 /*#signin #signup {
 
 }*/
+/*CALENDAR*/
+#calendar {
+  width: 100%;
+}
+#calendar a {
+  color: #666;
+  text-decoration: none;
+}
+#calendar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  clear: both;
+  width: 100%;
+}
 input {
   padding: 5px 10px;
   font-size: 13px;
@@ -85,14 +100,14 @@ body{
 h3 p{
   font-weight:normal;
 }
-ul li{
+ul li .sticky{
   list-style:none;
   margin:1em;
   position: relative;
   /*display:inline;*/
   float: left;
 }
-ul{
+ul .sticky{
   overflow:hidden;
   padding:3em;
 }
@@ -101,11 +116,11 @@ ul li h3{
   font-weight:bold;
   padding-bottom:10px;
 }
-ul li p{
+ul li p {
   font-family:"Reenie Beanie",arial,sans-serif;
   font-size:180%;
 }
-ul li a{
+ul li a {
   float: left;
   text-decoration:none;
   color:#000;
@@ -127,7 +142,7 @@ ul li a{
   -o-transform:rotate(-6deg);
   -moz-transform:rotate(-6deg);
 }
-ul:nth-child(even) li a{
+ul:nth-child(even) li a {
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
@@ -135,7 +150,7 @@ ul:nth-child(even) li a{
   top:5px;
   background: #ccf;
 }
-ul:nth-child(3n) li a{
+ul:nth-child(3n) li a {
   -o-transform:rotate(4deg);
   -webkit-transform:rotate(4deg);
   -moz-transform:rotate(4deg);
