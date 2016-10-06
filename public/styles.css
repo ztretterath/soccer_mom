@@ -1,9 +1,9 @@
 /*body {
   background: blue;
 }*/
-#signin #signup {
-  /*color: yellow;*/
-}
+/*#signin #signup {
+
+}*/
 input {
   padding: 5px 10px;
   font-size: 13px;
@@ -19,7 +19,9 @@ button {
     font-size: 13px;
 }
 .user-btns {
-  display: inline-block;
+  display: block;
+  width: 120px;
+  /*display: inline-block;*/
   position: fixed;
   /*float: right;*/
   top: 10px;

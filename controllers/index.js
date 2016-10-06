@@ -48,7 +48,7 @@ router.post('/signup', function(req, res){
 });
 
 //// USER HOMEPAGE ////
-router.get('/userhome/:userId', function(req, res){
+router.get('/userhome', function(req, res){
   // if (!req.user || req.user._id != req.params.id){
   //   console.log('not authorized');
   //   res.redirect('/');
@@ -74,7 +74,7 @@ router.post('/signin', passport.authenticate('local', {failureRedirect: '/'}), f
     if (err) return next(err);
     User.findOne({username: req.session.passport.user}).exec()
     .then(function(user){
-      res.redirect('/userhome/:userId');
+      res.redirect('/userhome');
     })
     .catch(function(err){
       console.log('error: ', err);
@@ -90,6 +90,9 @@ router.delete('/signout', function(req, res){
 
 //// MOTHER LIST ////
 router.get('/motherlist', function(req, res){
+  // var array = Users.find().fetch();
+  // var randomIndex = Math.floor(Math.random()*array.length);
+  // var nextSnack = array[randomIndex];
   // var user = User.findById({id: req.params.id});
   User.find({}, function(err, users){
     var user = User.findById({id: req.params.id});
@@ -105,7 +108,7 @@ router.post('/newSnack/:id', function(req, res){
     // console.log(user);
     user.snacks.push(new Snack({name: req.body.name}))
     user.save(function(err, snack){
-      res.redirect('/userhome/:userId');
+      res.redirect('/userhome');
     });
   });
 });
@@ -123,14 +126,14 @@ router.post('/newSnack/:id', function(req, res){
 // console.log(req.params.id);
 
 
-router.delete(':userId/deleteSnack/:id', function(req, res){
+router.delete('/deleteSnack/:id', function(req, res){
   // console.log("delete path");
-  User.findOne(req.params.userId)
+  User.findOne(req.params)
   .then(function(user) {
     $pull: {snacks: {$in: req.params.id}}
   })
   .then(function(err) {
-    res.redirect('/userhome/:userId')
+    res.redirect('/userhome')
   });
 }); //end route
 
