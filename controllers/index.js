@@ -42,13 +42,13 @@ router.post('/signup', function(req, res){
     req.body.password,
     function(err, user) {
       if (err) return res.json({user:user});
-      res.redirect('/')
+      res.redirect('/signin')
     }
   )
 });
 
 //// USER HOMEPAGE ////
-router.get('/userhome', function(req, res){
+router.get('/userhome/:userId', function(req, res){
   // if (!req.user || req.user._id != req.params.id){
   //   console.log('not authorized');
   //   res.redirect('/');
@@ -74,7 +74,7 @@ router.post('/signin', passport.authenticate('local', {failureRedirect: '/'}), f
     if (err) return next(err);
     User.findOne({username: req.session.passport.user}).exec()
     .then(function(user){
-      res.redirect('/userhome');
+      res.redirect('/userhome/:userId');
     })
     .catch(function(err){
       console.log('error: ', err);
@@ -105,7 +105,7 @@ router.post('/newSnack/:id', function(req, res){
     // console.log(user);
     user.snacks.push(new Snack({name: req.body.name}))
     user.save(function(err, snack){
-      res.redirect('/userhome');
+      res.redirect('/userhome/:userId');
     });
   });
 });
@@ -123,14 +123,14 @@ router.post('/newSnack/:id', function(req, res){
 // console.log(req.params.id);
 
 
-router.post('/deleteSnack/:id', function(req, res){
+router.delete(':userId/deleteSnack/:id', function(req, res){
   // console.log("delete path");
-  User.findOne(req.params.id)
+  User.findOne(req.params.userId)
   .then(function(user) {
     $pull: {snacks: {$in: req.params.id}}
   })
   .then(function(err) {
-    res.redirect('/userhome')
+    res.redirect('/userhome/:userId')
   });
 }); //end route
 
