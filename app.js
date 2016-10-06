@@ -14,7 +14,12 @@ var localStrategy  = require('passport-local');
 var User           = require('./models/user.js');
 
 //// CONNECT TO DB ////
-mongoose.connect('mongodb://localhost/SoccerMom');
+// mongoose.connect('mongodb://localhost/SoccerMom');
+
+//// HEROKU ////
+var mongoURI =  process.env.MONGODB_URI || 'mongodb://localhost/SoccerMom';
+mongoose.connect(mongoURI);
+//this runs locally or to heroku
 
 //// MIDDLEWARE ////
 app.use(logger('dev'));
@@ -40,4 +45,5 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', require('./controllers/index.js'));
 
 //// LISTEN HERE ////
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
+//similar to db connection listen locally or on heroku 
