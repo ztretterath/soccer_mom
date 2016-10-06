@@ -9,7 +9,7 @@
   {{#each user.snacks}}
     <li class="user-snacks">
       {{name}}
-      <form action="/deleteSnack/{{user.snacks._id}}">
+      <form action="/deleteSnack/{{_id}}?_method=delete" method="post">
         <button type="submit" name="button" class="hvr-pulse">Eaten</button>
       </form>
     </li>
