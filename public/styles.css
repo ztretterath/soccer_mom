@@ -1,12 +1,25 @@
 /*body {
   background: blue;
 }*/
+#signin #signup {
+  /*color: yellow;*/
+}
+button {
+    background-color: #7c795d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
 .user-btns {
   display: inline-block;
   position: fixed;
-  float: left;
+  /*float: right;*/
   top: 10px;
-  right:10px;
+  left:10px;
   box-sizing: border-box;
 }
 @keyframes hvr-pulse {
