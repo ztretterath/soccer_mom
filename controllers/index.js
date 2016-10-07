@@ -119,9 +119,9 @@ router.post('/newSnack/:id', function(req, res){
 
 // DELETE SNACK ////
 router.delete('/deleteSnack/:snackId', function(req, res) {
-  // var removeSnack = req.params.snackId;
-  // var test = req.user.snacks.indexOf(removeSnack);
-  // console.log(removeSnack);
+  var removeSnack = req.params.snackId;
+  var test = req.user.snacks.indexOf(removeSnack);
+  console.log("snackId:" + removeSnack);
   // console.log(test);
   // User.findByIdAndUpdate(req.params.id, {
   //   $pull: {
