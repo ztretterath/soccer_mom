@@ -4,7 +4,31 @@
 /*#signin #signup {
 
 }*/
-
+.description {
+  text-align: right;
+  border-left: 2px #7c795d solid;
+  padding: 10px;
+}
+.steps {
+  text-align: left;
+  padding: 10px;
+}
+.user-snacks {
+  /*border: 1px black solid;*/
+  height: 80px;
+  padding: 20px;
+}
+.user-snacks li {
+  background: #7c795d;
+  display: inline-block;
+  float: left;
+  width: 20vw;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-right: -1px;
+  padding: 10px;
+  text-align: center;
+}
 input {
   padding: 5px 10px;
   font-size: 13px;
@@ -165,18 +189,24 @@ ul.sticky li a:hover,ul.sticky li a:focus{
 #header {
  color: #7c795d;
  font-family: 'Trocchi', serif;
- font-size: 45px;
+ font-size: 50px;
  font-weight: normal;
  line-height: 48px;
  margin: 0;
+ position: absolute;
+ top: 10px;
+ right: 10px;
 }
 #subheader {
-  color: #7c795d;
+  color: #333;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 32px;
   margin: 0 0 24px;
+  position: absolute;
+  top: 55px;
+  right: 10px;
 }
 footer {
   position: fixed;
@@ -263,7 +293,7 @@ footer {
   color: #666;
 }
 
-@media(max-width: 760px) { /*iPad*/
+@media(max-width: 620px) { /*iPad*/
   #calendar .weekdays {
     display:none; /*no weekdays needed for small screen*/
   }
@@ -277,26 +307,21 @@ footer {
   #calendar .other-month {
     display: none; /*no prev month needed for small screen*/
   }
+  #header {
+    font-size: 40px;
+  }
+  #subheader {
+    display: none;
+  }
+  .description {
+    text-align: left;
+  }
   /*#calendar .date {
     float: none;
   }*/
 }
 
-.user-snacks {
-  /*border: 1px black solid;*/
-  height: 80px;
-}
-.user-snacks li {
-  background: #7c795d;
-  display: inline-block;
-  float: left;
-  width: 20vw;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  margin-right: -1px;
-  padding: 10px;
-  text-align: center;
-}
+
 /*3D TITLE*/
 /*.title {
 text-align: center;

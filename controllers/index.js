@@ -119,15 +119,19 @@ router.post('/newSnack/:id', function(req, res){
 
 // DELETE SNACK ////
 router.delete('/deleteSnack/:snackId', function(req, res) {
-  User.findByIdAndUpdate(req.params.id, {
-    $pull: {
-      // snacks: {"_id": req.params.snackId}
-      snacks: {_id: req.params.snackId}
-    }
-  }, function(err) {
-    res.redirect('/userhome')
-  })
-  console.log('snack id:'+req.params.snackId);
+  // var removeSnack = req.params.snackId;
+  // var test = req.user.snacks.indexOf(removeSnack);
+  // console.log(removeSnack);
+  // console.log(test);
+  // User.findByIdAndUpdate(req.params.id, {
+  //   $pull: {
+  //     // snacks: {"_id": req.params.snackId}
+  //     snacks: [{_id: req.params.snackId}]
+  //   }
+  // }, function(err) {
+  //   res.redirect('/userhome')
+  // })
+  // console.log('snack id:'+req.params.snackId);
 })
 
 // snacks: {_id: req.params.id}
