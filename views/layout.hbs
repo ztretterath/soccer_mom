@@ -34,21 +34,25 @@ family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     <!-- checkEdits will run to load saved changes from user -->
     {{#if user}}
     <!-- <div class="user-btns"> -->
+    <div class="navigation">
       <form  action="/signout?_method=DELETE" method="POST">
-        <button type="submit" class="hvr-pulse" class="user-btns">Sign Out</button>
+        <button type="submit" class="hvr-pulse">Sign Out</button>
       </form>
       <form action="/userhome" method="get">
         <button type="submit" class="hvr-pulse" class="user-btns">Home</button>
       </form>
       <form action="/calendar" method="get">
-        <button type="submit" class="hvr-pulse" class="user-btns">Calendar</button>
+        <button type="submit" class="hvr-pulse" >Calendar</button>
       </form>
+    </div>
     <!-- </div> -->
         <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
     {{else}}
+    <div class="navigation">
       <form action="/signin" method="get">
-        <button type="submit" class="hvr-pulse" class="user-btns">Sign In / Up</button>
+        <button type="submit" class="hvr-pulse">Sign In / Up</button>
       </form>
+    </div>
         <!-- <li style='display: inline;'><a href="/signin">Sign In / Up</a></li> -->
         <!-- <li style='display: inline;'><a href="/userhome">Home</a></li> -->
     {{/if}}
