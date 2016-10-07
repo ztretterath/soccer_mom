@@ -17,11 +17,12 @@
   /*border: 1px black solid;*/
   height: 80px;
   padding: 20px;
+  text-decoration: none;
 }
 .user-snacks li {
   background: #7c795d;
-  display: inline-block;
-  float: left;
+  /*display: inline-block;*/
+  /*float: left;*/
   width: 20vw;
   box-sizing: border-box;
   border: 1px solid #ccc;

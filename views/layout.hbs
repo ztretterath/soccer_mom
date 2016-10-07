@@ -13,6 +13,13 @@ family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
         // grab editable calendar elements
 
         var userCalendar = editCalendar.innerHTML
+        // grab edited version
+
+        localStorage.userEdits = userCalendar;
+        //save info locally
+
+        document.getElementById("update").innerHTML = "Calendar saved!"
+        //deliver confirmation message
       }
     </script>
   </head>
