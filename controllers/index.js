@@ -182,6 +182,7 @@ router.delete('/deleteSnack/:id', function(req, res) {
 var id = req.params.id;
 
   Snack.findByIdAndRemove({_id:id}, function(err){
+    console.log(id);
     res.redirect('/userhome');
   })
 })
