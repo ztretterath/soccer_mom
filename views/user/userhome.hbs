@@ -1,11 +1,7 @@
 <form action="/motherlist" method="get">
    <button type="submit" class="hvr-pulse">Mother List</button>
 </form>
-<br>
-<form action="/newSnack/{{user._id}}" method="post">
-  <input type="text" name="name" placeholder="Snack Name">
-  <button type="submit" class="hvr-pulse">Add Snack</button>
-</form>
+
 <br>
 <!-- <a href="/motherlist">Mother List</a> -->
 <h3 id="user-welcome">Welcome back, {{user.username}}</h3>
@@ -24,3 +20,8 @@
 
 <br>
 <br>
+
+<form action="/newSnack/{{user._id}}" method="post">
+  <input type="text" name="name" placeholder="Snack Name">
+  <button type="submit" class="hvr-pulse">Add Snack</button>
+</form>

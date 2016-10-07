@@ -168,24 +168,24 @@ router.delete('/deleteSnack/:id', function(req, res) {
   // })
 
 // NEW ATTEMPT
-  // User.findByIdAndUpdate(req.params.id, {
-  //   $pull: {
-  //     // snacks: {"_id": req.params.snackId}
-  //     snacks: {'_id': req.params.id}
-  //   }
-  // }, function(err) {
-  //   res.redirect('/userhome')
-  // })
+  User.findByIdAndUpdate(req.params.id, {
+    $pull: {
+      // snacks: {"_id": req.params.snackId}
+      snacks: {_id: req.params.id}
+    }
+  }, function(err) {
+    res.redirect('/userhome')
+  });
   // console.log('snack id:'+req.params.snackId);
 
 // NEW ATTEMPT
-var id = req.params.id;
-
-  Snack.findByIdAndRemove({_id:id}, function(err){
-    console.log(id);
-    res.redirect('/userhome');
-  })
-})
+// var id = req.params.id;
+//
+//   Snack.findByIdAndRemove({_id:id}, function(err){
+//     console.log(id);
+//     res.redirect('/userhome');
+//   })
+});
 
 
 module.exports = router;
