@@ -7,7 +7,6 @@ var User          = require('../models/user.js');
 var Snack         = require('../models/snack.js')
 // var methodOverride = require('method-override');
 
-
 // var authenticate = function(req, res, next) {
 //   if (!req.user || req.user._id != req.params.id) {
 //     console.log('not authorized');
@@ -119,15 +118,16 @@ router.post('/newSnack/:id', function(req, res){
 });
 
 // DELETE SNACK ////
-router.delete('/deleteSnack/:id', function(req, res) {
-  // User.findByIdAndUpdate(user._id, {
-  //   $pull: {
-  //     snacks: {_id: req.params.id}
-  //   }
-  // }, function(err) {
-  //   res.redirect('/userhome')
-  // })
-  console.log(req.params.id);
+router.delete('/deleteSnack/:snackId', function(req, res) {
+  User.findByIdAndUpdate(req.params.id, {
+    $pull: {
+      // snacks: {"_id": req.params.snackId}
+      snacks: {_id: req.params.snackId}
+    }
+  }, function(err) {
+    res.redirect('/userhome')
+  })
+  console.log('snack id:'+req.params.snackId);
 })
 
 // snacks: {_id: req.params.id}
