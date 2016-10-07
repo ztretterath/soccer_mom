@@ -15,7 +15,7 @@
   {{#each user.snacks}}
     <li>
       {{name}}
-      <form action="/deleteSnack/{{_id}}?_method=delete" method="post">
+      <form action="/deleteSnack/{{_id}}?_method=DELETE" method="POST">
         <button type="submit" name="button" class="hvr-pulse">Eaten</button>
       </form>
     </li>

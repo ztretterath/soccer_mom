@@ -118,11 +118,34 @@ router.post('/newSnack/:id', function(req, res){
 });
 
 // DELETE SNACK ////
-router.delete('/deleteSnack/:snackId', function(req, res) {
-  var removeSnack = req.params.snackId;
-  var test = req.user.snacks.indexOf(removeSnack);
-  console.log("snackId:" + removeSnack);
-  // console.log(test);
+router.delete('/deleteSnack/:id', function(req, res) {
+  var user = req.user;
+  var snacks = user.snacks;
+  var id = req.params.id;
+  // var test = req.user.snacks.indexOf(removeSnack);
+  // console.log("snackId:" + removeSnack);
+
+  snacks.findByIdAndRemove({_id: id}, function(err){
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/userhome');
+      return res.status(200).send();
+    }
+    console.log();
+  })
+
+  // Snack.findByIdAndUpdate(removeSnack,
+  //   {
+  //     $pull: {
+  //       // snacks: {"_id": req.params.snackId}
+  //       snacks: [{_id: req.params.snackId}]
+  //     }
+  //   }, function(err) {
+  //     res.redirect('/userhome')
+  //   })
+  // // console.log(test);
+
   // User.findByIdAndUpdate(req.params.id, {
   //   $pull: {
   //     // snacks: {"_id": req.params.snackId}
