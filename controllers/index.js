@@ -119,12 +119,14 @@ router.post('/newSnack/:id', function(req, res){
 
 // DELETE SNACK ////
 router.delete('/deleteSnack/:id', function(req, res) {
+// NEW ATTEMPT
   // var user = req.user;
   // var snacks = user.snacks;
   // var id = req.params.id;
   // var test = req.user.snacks.indexOf(removeSnack);
   // console.log("snackId:" + removeSnack);
 
+// NEW ATTEMPT
   // snacks.findByIdAndRemove({_id: id}, function(err){
   //   if (err) {
   //     console.log(err);
@@ -135,6 +137,7 @@ router.delete('/deleteSnack/:id', function(req, res) {
   //   // console.log();
   // })
 
+// NEW ATTEMPT
   // Snack.findByIdAndUpdate(removeSnack,
   //   {
   //     $pull: {
@@ -146,34 +149,42 @@ router.delete('/deleteSnack/:id', function(req, res) {
   //   })
   // // console.log(test);
 
-  User.findByIdAndUpdate(req.params.id, {
-    $pull: {
-      // snacks: {"_id": req.params.snackId}
-      snacks: {'_id': req.params.id}
-    }
-  }, function(err) {
-    res.redirect('/userhome')
-  })
+  // snacks: {_id: req.params.id}
+  // console.log(req.params.id);
+
+// NEW ATTEMPT
+  // router.delete('/deleteSnack/:id', function(req, res){
+  //   // console.log("delete path");
+  //   User.findOne(req.params)
+  //   .then(function(user) {
+  //     $pull: {snacks: {$in: req.params.id}}
+  //   })
+  //   .then(function(err) {
+  //     res.redirect('/userhome')
+  //   });
+  // }); //end route
+  // router.get('/remove', function(req, res){
+  //   User.findOne(
+  // })
+
+// NEW ATTEMPT
+  // User.findByIdAndUpdate(req.params.id, {
+  //   $pull: {
+  //     // snacks: {"_id": req.params.snackId}
+  //     snacks: {'_id': req.params.id}
+  //   }
+  // }, function(err) {
+  //   res.redirect('/userhome')
+  // })
   // console.log('snack id:'+req.params.snackId);
+
+// NEW ATTEMPT
+var id = req.params.id;
+
+  Snack.findByIdAndRemove({_id:id}, function(err){
+    res.redirect('/userhome');
+  })
 })
-
-// snacks: {_id: req.params.id}
-// console.log(req.params.id);
-//
-// router.delete('/deleteSnack/:id', function(req, res){
-//   // console.log("delete path");
-//   User.findOne(req.params)
-//   .then(function(user) {
-//     $pull: {snacks: {$in: req.params.id}}
-//   })
-//   .then(function(err) {
-//     res.redirect('/userhome')
-//   });
-// }); //end route
-// router.get('/remove', function(req, res){
-//   User.findOne(
-// })
-
 
 
 module.exports = router;
