@@ -4,6 +4,14 @@
 /*#signin #signup {
 
 }*/
+#forms {
+  width: 50%;
+  display: block;
+  margin: 5% 30% 0 30%;
+  box-sizing: border-box;
+  padding:20px;
+  border: 1px black solid;
+}
 .description {
   text-align: right;
   border-left: 2px #7c795d solid;
@@ -17,11 +25,12 @@
   /*border: 1px black solid;*/
   height: 80px;
   padding: 20px;
-  text-decoration: none;
 }
 .user-snacks li {
+  /*display: inline;*/
+  text-decoration: none !important;
   background: #7c795d;
-  /*display: inline-block;*/
+  display: inline-block;
   /*float: left;*/
   width: 20vw;
   box-sizing: border-box;
