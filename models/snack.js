@@ -9,4 +9,8 @@ var snackSchema = new Schema({
 
 snackSchema.plugin(require('passport-local-mongoose'));
 
-module.exports = mongoose.model('Snack', snackSchema);
+var Snack = mongoose.model('Snack', snackSchema)
+
+module.exports = Snack;
+
+// module.exports = mongoose.model('Snack', snackSchema);

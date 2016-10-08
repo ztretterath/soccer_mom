@@ -117,8 +117,32 @@ router.post('/newSnack/:id', function(req, res){
   });
 });
 
+// UPDATE SNACK //
+
 // DELETE SNACK ////
-router.delete('/deleteSnack/:id', function(req, res) {
+router.delete('/users/:userId/snacks/:id', function(req, res) {
+    console.log("This is user_id: ", req.params.userId);
+    console.log("This is snack_id: ", req.params.id);
+    // NEW ATTEMPT
+    //access user.snacks by id and delete the snack
+    User.findByIdAndUpdate(req.params.userId, {
+      $pull: {
+        snacks: {_id: req.params.id}
+      }
+    }, function(err, docs){
+      console.log(docs);
+      if(!err) {
+        res.redirect('/userhome')
+      }
+    });
+
+    // User.findById(req.params.userId, function(err, user){
+    //
+    //   //splice
+    //   //User.save
+    // });
+
+});
 // NEW ATTEMPT
   // var user = req.user;
   // var snacks = user.snacks;
@@ -167,15 +191,7 @@ router.delete('/deleteSnack/:id', function(req, res) {
   //   User.findOne(
   // })
 
-// NEW ATTEMPT
-  User.findByIdAndUpdate(req.params.id, {
-    $pull: {
-      // snacks: {"_id": req.params.snackId}
-      snacks: {_id: req.params.id}
-    }
-  }, function(err) {
-    res.redirect('/userhome')
-  });
+
   // console.log('snack id:'+req.params.snackId);
 
 // NEW ATTEMPT
@@ -185,7 +201,7 @@ router.delete('/deleteSnack/:id', function(req, res) {
 //     console.log(id);
 //     res.redirect('/userhome');
 //   })
-});
+
 
 
 module.exports = router;
