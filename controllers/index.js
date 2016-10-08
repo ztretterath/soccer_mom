@@ -124,12 +124,11 @@ router.get('/:id/edit', function(req, res){
   });
 });
 
-router.put('/:id', function(req, res){
+router.put('/update', function(req, res){
   User.findByIdAndUpdate(req.params.id, {
     username: req.body.username
-    // password: req.body.password
   }, {new:true}, function(err, user) {
-      res.render('/userhome', {user:user});
+      res.render('user/userhome.hbs', {user:user});
   });
 });
 

@@ -1,5 +1,5 @@
 <h3>Hey, {{user.username}}! Don't like your name anymore?</h3>
-<form action="{{user._id}}/edit/update?_method=put" method="post">
+<form action="/update?_method=put" method="post">
 <label>New, cooler name: </label>
 <input type="text" name="username" value="{{user.username}}">
 <input type="submit" value="Save">
