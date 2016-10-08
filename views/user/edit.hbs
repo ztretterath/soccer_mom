@@ -1,1 +1,6 @@
-<h3>Make It More Delicious</h3>
+<h3>Hey, {{user.username}}! Don't like your name anymore?</h3>
+<form action="/{{_id}}?_method=put" method="post">
+<label>New, cooler name: </label>
+<input type="text" name="name" value="{{user.username}}">
+<input type="submit" value="Save">
+</form>

@@ -117,12 +117,22 @@ router.post('/newSnack/:id', function(req, res){
   });
 });
 
-// UPDATE SNACK //
+// UPDATE USER //
 router.get('/:id/edit', function(req, res){
   User.findById(req.params.id, function(err, user){
     res.render('/user/edit.hbs', {user:user})
   });
 });
+
+router.put('/:id', function(req, res){
+  User.findByIdAndUpdate(req.params.id, {
+    username: req.body.username
+    // password: req.body.password
+  }, {new:true}, function(err, user) {
+      res.render('/userhome', {user:user});
+  });
+});
+
 
 // DELETE SNACK ////
 router.delete('/users/:userId/snacks/:id', function(req, res) {
