@@ -124,14 +124,28 @@ router.get('/:id/edit', function(req, res){
   });
 });
 
-router.put('/update', function(req, res){
-  User.findByIdAndUpdate(req.params.id, {
-    username: req.body.username
-  }, {new:true}, function(err, user) {
-      res.render('user/userhome.hbs', {user:user});
-  });
-});
-
+router.put('/:id/update', function(req, res) {
+  var user = User.findById(req.params.id);
+  console.log(user);
+})
+// router.put('/update', function(req, res){
+//   User.findByIdAndUpdate(req.params.id, {
+//     username: req.body.username
+//   }, {new:true}, function(err, user) {
+//       res.render('user/userhome.hbs', {user:user});
+//   });
+// });
+ // router.put('/update', function(req, res){
+ //   User.findById(req.params.id)
+ //   .then(function(User){
+ //     User.update({username: username}, {
+ //       username: req.body.username
+ //     })
+ //   })
+ //   .then(function(user){
+ //     res.render('user/userhome.hbs', {user:user})
+ //   });
+ // }); //end put route
 
 // DELETE SNACK ////
 router.delete('/users/:userId/snacks/:id', function(req, res) {
