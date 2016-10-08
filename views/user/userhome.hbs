@@ -12,9 +12,7 @@
       <form method="post" action="/users/{{../user._id}}/snacks/{{_id}}?_method=delete" >
         <button type="submit" name="button" class="hvr-pulse">Eaten</button>
       </form>
-      <form action="/{{../user._id}}/editSnack/{{_id}}?_method=put" method="post">
-        <button type="submit" name="button">Edit</button>
-      </form>
+      <a href="/{{../user._id}}/editSnack/{{_id}}">Edit</a>
     </li>
   {{/each}}
 </ul>

@@ -118,9 +118,9 @@ router.post('/newSnack/:id', function(req, res){
 });
 
 // UPDATE SNACK //
-router.get(':userId/editSnack/:id', function(req, res){
-  User.findById(req.params.userId, function(err, user){
-    res.render('/user/edit.hbs')
+router.get('/:id/edit', function(req, res){
+  User.findById(req.params.id, function(err, user){
+    res.render('/user/edit.hbs', {user:user})
   });
 });
 
