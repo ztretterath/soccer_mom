@@ -118,11 +118,16 @@ router.post('/newSnack/:id', function(req, res){
 });
 
 // UPDATE SNACK //
+router.get(':userId/editSnack/:id', function(req, res){
+  User.findById(req.params.userId, function(err, user){
+    res.render('/user/edit.hbs')
+  });
+});
 
 // DELETE SNACK ////
 router.delete('/users/:userId/snacks/:id', function(req, res) {
-    console.log("This is user_id: ", req.params.userId);
-    console.log("This is snack_id: ", req.params.id);
+    // console.log("This is user_id: ", req.params.userId);
+    // console.log("This is snack_id: ", req.params.id);
     // NEW ATTEMPT
     //access user.snacks by id and delete the snack
     User.findByIdAndUpdate(req.params.userId, {
