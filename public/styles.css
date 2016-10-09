@@ -47,6 +47,7 @@
 #user-welcome {
   font-family:arial,sans-serif;
   font-weight: normal;
+  text-align: right;
 }
 input {
   padding: 5px 10px;
