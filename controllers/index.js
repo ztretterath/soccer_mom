@@ -117,21 +117,40 @@ router.post('/newSnack/:id', function(req, res){
   });
 });
 
-// UPDATE USER //
+// UPDATE USER PASSWORD //
 router.get('/:id/edit', function(req, res){
   User.findById(req.params.id, function(err, user){
     res.render('user/edit.hbs/', {user:user})
   });
 });
 
-
+// USING SANITIZED USERS //
 router.put('/:id/update', function(req, res){
-  User.findByIdAndUpdate(req.params.id, {
-    username: req.body.username
-  }, {new:true}, function(err, user) {
-      res.render('user/userhome.hbs', {user:user});
-  });
+  var newPassword = req.body.password;
+  console.log(newPassword);
+  // User.findById(req.params.id)
+  // .then(function(sanitizedUser){
+  //   if (sanitizedUser){
+  //     sanitizedUser.setPassword(newPassword, function(){
+  //       sanitizedUser.save();
+  //       res.status(200).json({message: 'password success!'});
+  //     });
+  //   } else {
+  //     res.status(500).json({message: 'no such user!'})
+  //   }
+  // }, function(err){
+  //   console.log(err);
+  // });
 });
+
+// BEST ATTEMPT //
+  // router.put('/:id/update', function(req, res){
+  //   User.findByIdAndUpdate(req.params.id, {
+  //     username: req.body.username
+  //   }, {new:true}, function(err, user) {
+  //       res.render('user/userhome.hbs', {user:user});
+  //   });
+  // });
 
 //LOG TEST
   // router.put('/:id/update', function(req, res) {
