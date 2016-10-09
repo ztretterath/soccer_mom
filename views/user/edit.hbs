@@ -1,6 +1,6 @@
-<h3>Hey, {{user.username}}! Don't like your name anymore?</h3>
+<h3>Hey, {{user.username}}! Want a new password?</h3>
 <form action="/{{user._id}}/update?_method=put" method="post">
-<label>New, cooler name: </label>
-<input type="text" name="username" value="{{user.username}}">
+<label>New, cooler password: </label>
+<input type="password" name="password">
 <input type="submit" value="Save">
 </form>
