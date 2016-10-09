@@ -1,6 +1,8 @@
-<h3>Hey, {{user.username}}! Want a new password?</h3>
-<form action="/{{user._id}}/update?_method=put" method="post">
-<label>New, cooler password: </label>
-<input type="password" name="password">
-<input type="submit" value="Save">
-</form>
+<div id="edit-password">
+  <h3>Hey, {{user.username}}! Want a new password?</h3>
+  <form action="/{{user._id}}/update?_method=put" method="post">
+  <label>New, cooler password: </label>
+  <input type="password" name="password">
+  <input type="submit" value="Save">
+  </form>
+</div>

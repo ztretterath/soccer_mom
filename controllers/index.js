@@ -39,7 +39,6 @@ router.post('/signup', function(req, res){
     new User({
       username: req.body.username,
       password: req.body.password,
-      favSnackType: req.body.password,
       createdAt: new Date(),
       updatedAt: new Date()
     }),

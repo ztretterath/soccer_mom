@@ -5,8 +5,9 @@ var snackSchema = require('./snack.js').schema;
 var userSchema = new Schema({
   username:  String,
   password:  String,
-  favSnackType: String,
-  snacks: [snackSchema]
+  snacks: [snackSchema],
+  createdAt: Date,
+  updatedAt: Date
 });
 
 userSchema.plugin(require('passport-local-mongoose'));
