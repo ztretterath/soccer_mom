@@ -126,7 +126,7 @@ router.get('/:id/edit', function(req, res){
 // USING SANITIZED USERS //
 router.put('/:id', function(req, res){
   console.log("User's password", req.body.password);
-  User.findById(req.params.id, function(err){
+  User.findById(req.params.id, function(err, user){
     user.setPassword(req.body.password, function(){
       user.save();
       res.redirect('/userhome');
