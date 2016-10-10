@@ -21,3 +21,13 @@
 ***This feature is a work in progress***
   4.1. The user sees a calendar that aims to compile user data for easy access.
   4.2. The user may edit the content of set game-days including the snacks being brought, who is bringing them, and what time the game is to begin.
+
+5. Style features:
+  5.1. The mother list:
+    5.1.1 Utilizes ul and li with some styling to set height and width of each user 'sticky'.
+    5.1.2. Silly google fonts make the snacks look handwritten.
+    5.1.3. A transform: rotate property skews the ul on the page and makes it appear to be a sticky note.
+    5.1.4. A transform: scale property on hover makes the sticky note appear to come closer to a user (1.25 x as large).
+  5.2 The calendar:
+    5.2.1. The calendar is created with divs (similar to connect four project).
+    5.2.2.
