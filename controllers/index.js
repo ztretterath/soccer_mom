@@ -124,9 +124,12 @@ router.get('/:id/edit', function(req, res){
 });
 
 // USING SANITIZED USERS //
-router.put('/:id/update', function(req, res){
-  var newPassword = req.body.password;
-  console.log(newPassword);
+router.put('/:id', function(req, res){
+  console.log("User's password", req.body.password);
+});
+  // var newPassword = req.body.password;
+  // console.log(newPassword);
+
   // User.findById(req.params.id)
   // .then(function(sanitizedUser){
   //   if (sanitizedUser){
@@ -140,7 +143,7 @@ router.put('/:id/update', function(req, res){
   // }, function(err){
   //   console.log(err);
   // });
-});
+
 
 // BEST ATTEMPT //
   // router.put('/:id/update', function(req, res){
