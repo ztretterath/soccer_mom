@@ -29,5 +29,8 @@
     5.1.3. A transform: rotate property skews the ul on the page and makes it appear to be a sticky note.
     5.1.4. A transform: scale property on hover makes the sticky note appear to come closer to a user (1.25 x as large).
   5.2 The calendar:
-    5.2.1. The calendar is created with divs (similar to connect four project).
-    5.2.2.
+    5.2.1. A calendar id wraps every property to make specificity while styling
+    5.2.2. The calendar is created with div and ul (similar to connect four project).
+    5.2.3. Each week is represented by an unordered list and each day an element within the list.
+    5.2.4. Divs within the lists represent different game times and snacks being brought (access the content with contenteditable property).
+    5.2.5. Hover effects create the effect of interactivity.
