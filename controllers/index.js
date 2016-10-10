@@ -129,8 +129,8 @@ router.put('/:id', function(req, res){
   User.findById(req.params.id, function(err, user){
     user.setPassword(req.body.password, function(){
       user.save();
-      res.redirect('/userhome');
-    })
+      res.redirect('/signin');
+    });
   });
 });
   // var newPassword = req.body.password;
