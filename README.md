@@ -21,6 +21,7 @@
 ***This feature is a work in progress***
   4.1. The user sees a calendar that aims to compile user data for easy access.
   4.2. The user may edit the content of set game-days including the snacks being brought, who is bringing them, and what time the game is to begin.
+***This feature will allow users to save changes to the calendar (store in db) and will update the calendar for all users***
 
 5. Style features:
   5.1. The mother list:
@@ -34,3 +35,8 @@
     5.2.3. Each week is represented by an unordered list and each day an element within the list.
     5.2.4. Divs within the lists represent different game times and snacks being brought (access the content with contenteditable property).
     5.2.5. Hover effects create the effect of interactivity.
+
+    https://wireframe.cc/FK39ix
+    https://wireframe.cc/HvASui
+    https://wireframe.cc/bQvdiF
+    https://trello.com/b/RUElaWNf/soccer-mom-app
