@@ -1,5 +1,11 @@
 # soccer_mom
 
+It all began when I was a third-grade student with soccer games to play and snacks to enjoy.
+As a child I never considered the effort required to organize a snack list and share snacks between parents.
+Enter Soccer Mom Companion.
+SMC aims to relieve the stress of the Saturday snack predicament.
+The app utilizes a mongo database and with the magic of Mongoose, JavaScript, HTML5, and CSS3 allows users to create usernames and passwords and begin sharing snack ideas and also to view a calendar (work in-progress) where game times and snacks are compiled.
+
 1. When a user visits '/',
   1.1. All visitors (users or not) are brought to the site's homepage. A button in the upper left hand corner appears for signing in / up.
 
