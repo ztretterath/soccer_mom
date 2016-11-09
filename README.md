@@ -6,6 +6,8 @@ Enter Soccer Mom Companion.
 SMC aims to relieve the stress of the Saturday snack predicament.
 The app utilizes a mongo database and with the magic of Mongoose, JavaScript, HTML5, and CSS3 allows users to create usernames and passwords and begin sharing snack ideas and also to view a calendar (work in-progress) where game times and snacks are compiled.
 
+##Feature Specs
+```markdown
 1. When a user visits '/',
   1.1. All visitors (users or not) are brought to the site's homepage. A button in the upper left hand corner appears for signing in / up.
 
@@ -41,7 +43,7 @@ The app utilizes a mongo database and with the magic of Mongoose, JavaScript, HT
     5.2.3. Each week is represented by an unordered list and each day an element within the list.
     5.2.4. Divs within the lists represent different game times and snacks being brought (access the content with contenteditable property).
     5.2.5. Hover effects create the effect of interactivity.
-
+```
 
     https://wireframe.cc/FK39ix
     https://wireframe.cc/HvASui
