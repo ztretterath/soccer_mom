@@ -42,6 +42,7 @@ The app utilizes a mongo database and with the magic of Mongoose, JavaScript, HT
     5.2.4. Divs within the lists represent different game times and snacks being brought (access the content with contenteditable property).
     5.2.5. Hover effects create the effect of interactivity.
 
+
     https://wireframe.cc/FK39ix
     https://wireframe.cc/HvASui
     https://wireframe.cc/bQvdiF
